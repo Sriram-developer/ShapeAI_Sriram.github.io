@@ -3,11 +3,14 @@ const bodyparser = require("body-parser");
 const app = express();
 app.use(bodyparser.urlencoded({extended: true}));
 
+// get method
+
 app.get("/", function(req, res){
     res.sendFile(__dirname+"/index.html");
 
 });
 
+// post method
 
 app.post("/", function(req, res){
     var n1 = Number(req.body.num1);
